@@ -1,0 +1,9 @@
+db.candidates.insertMany([
+	{"name":"Ty", "avatar":"/assets/tybalt-profile.png", "props":["short-tempered", "ambitious"]},
+	{"name":"Romeo", "avatar":"/assets/romeo-profile.png", "props":["handsome", "romantic"]},
+	{"name":"Mercutio", "avatar":"/assets/mercutio-profile.png", "props":["violent"]},
+	{"name":"Benvo", "avatar":"/assets/benvolio-profile.png", "props":["strong"]},
+	{"name":"The Fry", "avatar":"/assets/friar-profile.png", "props":["helpful"]},
+	{"name":"The Nurse", "avatar":"/assets/nurse-profile.png", "props":["active"]},
+	{"name":"The Count", "avatar":"/assets/paris-profile.png", "props":["wealthy"]},
+])

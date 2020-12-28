@@ -27,7 +27,7 @@ We gaan een deployment doen van een Kubernetes cluster op Azure en om dit te kun
 
 
 ## Een Kubernetes cluster op Azure Kubernetes Services
-Je kunt een Kubernetes cluster aanmaken via de UI of via de Azure CLI. In deze handleiding gebruiken we de CLI. Mocht je het via de UI willen doen, dan kun je deze video bekijken [TODO Video volgt].
+Je kunt een Kubernetes cluster aanmaken via de UI of via de Azure CLI. In deze handleiding gebruiken we de CLI. Mocht je het via de UI willen doen, dan kun je deze video op Stream bekijken [Kubernetes-on-Azure](https://web.microsoftstream.com/video/7dd8991f-300c-4010-b0c7-9bc3234d78ff).
 
 
 > Om de volgende stappen te volgen heb je de Azure CLI nodig. Zie https://docs.microsoft.com/en-us/cli/azure/install-azure-cli voor meer informatie.
@@ -123,8 +123,16 @@ kubectl delete service echo-server
 ```
 
 ## Tijdelijk uitschakelen om credits te sparen
-Als je het cluster "aan laat staan" gaan de kosten van de onderliggende VM's (de Kubernetes nodes) af van het maandelijkse tegoed. Wanneer je de handleiding hebt gevolgd, dan heb je 1 node (type D2) en die kost ongeveer 70 euro per maand. Mocht je het cluster niet gebruiken, dan kun je tijdelijk die nodes stoppen om zo tegoed te besparen. 
+Als je het cluster "aan laat staan" gaan de kosten van de onderliggende VM's (de Kubernetes nodes) af van het maandelijkse tegoed. Wanneer je de handleiding hebt gevolgd, dan heb je 1 node (type D2) en die kost ongeveer 85 euro per maand. Mocht je het cluster niet gebruiken, dan kun je tijdelijk die node(s) stoppen om zo tegoed te besparen.
 
-[TODO]
+Als je gaat kijken bij de resource groups, zul je zien dat er nog een "extra" resource group is bijgekomen. Deze heet "MC_[naam van je resource group]_[naam van je cluster]_westeurope". Als je in deze group gaat kijken vind je daar de verschillende onderdelen van ons aangemaakte Kubernetes cluster.
+
+Als je dan klikt op de Virtual Machine Scale Set, dan heb je bovenin de mogelijkheid om de scale set (en dus de onderliggende Virtual Machines) te stoppen (ook wel de-allocate genoemd). 
+
+![](images/pause.png) 
+
+Het cluster blijft bestaan (sterker nog de Master Node draait gewoon door), maar er gaat geen bedrag meer van het maandelijkse tegoed af. 
+
+Kijk eventueel in de video, daar komt het ook in voor: [Pauzeren van het cluster](https://web.microsoftstream.com/video/7dd8991f-300c-4010-b0c7-9bc3234d78ff?st=291)
 
 Niet vergeten om de scaleset weer te starten als je het cluster gaat gebruiken!
