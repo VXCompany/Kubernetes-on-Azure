@@ -38,3 +38,14 @@ docker push [naam van de container registry].azurecr.io/api-springboot:1.0
 docker build . -t [naam van de container registry].azurecr.io/api-dotnet:1.0
 docker push [naam van de container registry].azurecr.io/api-dotnet:1.0
 ```
+
+### ConfigMap
+```
+kubectl apply -f api-[springboot|dotnet]-configmap.yaml
+```
+
+### MongoDB credentials
+```
+kubectl create secret generic mongodb-creds --from-literal=username=wfat --fro
+m-literal=password=[gekozen password in de Seed stap]
+```
