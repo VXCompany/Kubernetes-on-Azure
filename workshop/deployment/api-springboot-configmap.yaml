@@ -1,5 +1,12 @@
-spring.data.mongodb.host=wherefore-release-mongodb
-spring.data.mongodb.port=27017
-spring.data.mongodb.database=wfat
-spring.data.mongodb.username=${MONGODB_USERNAME}
-spring.data.mongodb.password=${MONGODB_PASSWORD}
+apiVersion: v1
+data:
+  application.properties: |
+    spring.data.mongodb.host=wherefore-release-mongodb
+    spring.data.mongodb.port=27017
+    spring.data.mongodb.database=wfat
+    spring.data.mongodb.username=${MONGODB_USERNAME}
+    spring.data.mongodb.password=${MONGODB_PASSWORD}
+kind: ConfigMap
+metadata:
+  name: api-springboot
+  namespace: default
