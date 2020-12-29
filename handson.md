@@ -14,7 +14,7 @@ az acr login --name [naam van de container registry]
 ```
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo update
-helm install wherefore-release --set auth.rootPassword=[kies een wachtwoord] bitnami/mongodb
+helm install wherefore-mongodb-release --set auth.rootPassword=[kies een wachtwoord] bitnami/mongodb
 ```
 
 ### Seed van de database
@@ -48,4 +48,11 @@ kubectl apply -f api-[springboot|dotnet]-configmap.yaml
 ```
 kubectl create secret generic mongodb-creds --from-literal=username=wfat --fro
 m-literal=password=[gekozen password in de Seed stap]
+```
+
+## Deployment van Ingress
+```
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+helm install wherefore-ingress-release ingress-nginx/ingress-nginx
 ```
