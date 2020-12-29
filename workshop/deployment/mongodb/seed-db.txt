@@ -1,3 +1,5 @@
+use wfat
+
 db.candidates.insertMany([
 	{"name":"Ty", "avatar":"/assets/tybalt-profile.png", "props":["short-tempered", "ambitious"]},
 	{"name":"Romeo", "avatar":"/assets/romeo-profile.png", "props":["handsome", "romantic"]},
@@ -7,3 +9,13 @@ db.candidates.insertMany([
 	{"name":"The Nurse", "avatar":"/assets/nurse-profile.png", "props":["active"]},
 	{"name":"The Count", "avatar":"/assets/paris-profile.png", "props":["wealthy"]},
 ])
+
+
+db.createUser(
+{
+	user: "wfat",
+	pwd: passwordPrompt(),
+	roles:[
+		{role: "readWrite" , db:"wfat"}
+	]
+})

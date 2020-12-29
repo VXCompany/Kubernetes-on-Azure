@@ -60,7 +60,7 @@ az acr create -n $MYACR -g Kubernetes-on-Azure --sku basic
 
 5. Maak een Kubernetes cluster aan
 ```
-az aks create -n Kubernetes-on-Azure -g Kubernetes-on-Azure --node-count 1 --generate-ssh-keys --attach-acr $MYACR
+az aks create -n Kubernetes-on-Azure -g Kubernetes-on-Azure --node-count 1 --generate-ssh-keys --attach-acr $MYACR --enable-managed-identity
 ```
 
 6. Verbind met het cluster
