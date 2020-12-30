@@ -3,7 +3,7 @@ data:
   config.production.json: |
     {
       "environmentName": "production",
-      "endPointApiUrl": "http://api-service/api"
+      "endPointApiUrl": "http://k8sonazureyb.westeurope.cloudapp.azure.com/api"
     }
 kind: ConfigMap
 metadata:
