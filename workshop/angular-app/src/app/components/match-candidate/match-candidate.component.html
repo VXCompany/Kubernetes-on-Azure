@@ -1,0 +1,29 @@
+<mat-card class="box" [@zoomIn]="zoomIn" *ngIf="this.candidate">
+  <mat-card-header>
+    <mat-card-title
+      ><b>{{ this.candidate.name }}</b></mat-card-title
+    >
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      <img class="" [src]="this.candidate.avatar" />
+      <mat-chip-list>
+        <mat-chip *ngFor="let prop of this.candidate?.props"
+          ><b>{{ prop }}</b></mat-chip
+        >
+      </mat-chip-list>
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="actions">
+    <button color="warn" mat-fab (click)="clear(this.zooming[0])">
+      <mat-icon>clear</mat-icon>
+    </button>
+    <button
+      color="primary"
+      mat-fab
+      (click)="favorite(this.candidate.id)"
+    >
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

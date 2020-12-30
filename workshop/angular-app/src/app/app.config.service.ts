@@ -15,16 +15,7 @@ export class AppConfig {
         (settings) => {
           AppConfig.settings = settings;
           if (environment.name === settings.environmentName) {
-            this.httpClient
-              .get(`${AppConfig.settings.endPointApiUrl}/info`, {
-                responseType: 'text',
-              })
-              .subscribe((response) => {
-                AppConfig.settings.serverVersion = response.match(
-                  /.+?(?=,)/
-                )[0];
-                resolve(AppConfig.settings);
-              });
+            resolve(AppConfig.settings);
           } else {
             console.log(`${environment.name} neq ${settings.environmentName}`);
             reject(AppConfig.settings);
@@ -46,7 +37,4 @@ export class AppConfig {
 export interface IAppConfigSettings {
   environmentName: string;
   endPointApiUrl: string;
-  version: string;
-  serverVersion: string;
-  beta: boolean;
 }

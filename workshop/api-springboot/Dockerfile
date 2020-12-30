@@ -9,7 +9,9 @@ RUN mvn package
 
 # Build runtime image
 FROM openjdk:11.0.9-jre
+
 WORKDIR /app
+
 COPY --from=build-env /app/target/api-springboot-0.0.1-SNAPSHOT.jar .
 
 EXPOSE 8080

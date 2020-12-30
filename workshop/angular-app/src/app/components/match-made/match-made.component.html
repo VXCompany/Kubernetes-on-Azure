@@ -1,0 +1,27 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box matchmade" [@zoomIn]="zoomIn">
+    <mat-card-header> </mat-card-header>
+    <mat-card-content>
+      <img class="mat-card-avatar" src="/assets/juliet-profile.png" />
+      <svg class="heart" viewBox="0 0 32 29.6">
+        <path
+          d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"
+        />
+      </svg>
+      <img class="mat-card-avatar" [src]="this.candidate?.avatar" />
+      <P>
+        O {{ this.candidate?.name }}, {{ this.candidate?.name }}, wherefore art
+        thou {{ this.candidate?.name }}? <br /><br />
+        Deny thy father and refuse thy name. Or if thou wilt not, be but sworn
+        my love And I’ll no longer be a Capulet.<br /><br />That which we call a
+        rose By any other name would smell as sweet; So
+        {{ this.candidate?.name }} would, were he not
+        {{ this.candidate?.name }} call’d, Retain that dear perfection which he
+        owes Without that title. <br /><br />
+        {{ this.candidate?.name }}, doff thy name, And for that name, which is
+        no part of thee, Take all myself.
+      </P>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  config.production.json: |
+    {
+      "environmentName": "production",
+      "endPointApiUrl": "http://api-service/api"
+    }
+kind: ConfigMap
+metadata:
+  name: angular-app
+  namespace: default

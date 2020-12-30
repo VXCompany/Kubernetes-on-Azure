@@ -1,5 +1,6 @@
 package com.example.apispringboot;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +10,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path="candidates")
+@RequestMapping(path="")
 public class CandidateController {
 
     private final CandidateService candidateService;
@@ -18,19 +19,20 @@ public class CandidateController {
         this.candidateService = candidateService;
     }
 
-    @GetMapping(value = "", produces = "application/json")
+    @GetMapping(value = "candidates", produces = "application/json")
     public ResponseEntity< List<Candidate>> getAllCandidates() {
         return ResponseEntity.ok()
-                .header("Returned-By", "api-springboot")
+                .header("X-Powered-By", "api-springboot")
                 .body(candidateService.getAllCandidates());
     }
 
-    @GetMapping(path = "/match", produces = "application/json")
+    @GetMapping(path = "candidates/match", produces = "application/json")
     public ResponseEntity<Candidate> getNextMatch() {
 
         return ResponseEntity.ok()
-                .header("Returned-By", "api-springboot")
+                .header("X-Powered-By", "api-springboot")
                 .body(candidateService.getNextMatch());
     }
-
 }
+
+
