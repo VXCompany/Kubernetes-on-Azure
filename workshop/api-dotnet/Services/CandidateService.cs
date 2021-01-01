@@ -11,7 +11,18 @@ namespace api_dotnet.Services
 
         public CandidateService(ICandidateDatabaseSettings settings)
         {
-            var client = new MongoClient(settings.ConnectionString);
+
+            var options = new MongoClientSettings
+            {
+                Server = new MongoServerAddress(settings.Server, settings.Port)
+            };
+
+            if (!string.IsNullOrEmpty(settings.Username))
+            {
+                options.Credential = MongoCredential.CreateCredential(settings.DatabaseName, settings.Username, settings.Password);
+            }
+
+            var client = new MongoClient(options);
             var database = client.GetDatabase(settings.DatabaseName);
 
             _candidates = database.GetCollection<Candidate>(settings.CollectionName);

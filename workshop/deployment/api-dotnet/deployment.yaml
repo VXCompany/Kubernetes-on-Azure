@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-dotnet-deployment
+  labels:
+    app: api-dotnet
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-dotnet
+  template:
+    metadata:
+      labels:
+        app: api-dotnet
+    spec:
+      containers:
+      - name: api-dotnet
+        image: api-dotnet:1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+        - name: application-config
+          mountPath: /app/appsettings.json  
+          subPath: appsettings.json
+        env:
+        - name: CandidateDatabaseSettings__Username
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-creds
+              key: username
+        - name: CandidateDatabaseSettings__Password
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-creds
+              key: password
+      volumes:
+      - name: application-config
+        configMap:
+          name: api-dotnet
+
+        
