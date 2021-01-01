@@ -51,7 +51,6 @@ namespace api_dotnet
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {

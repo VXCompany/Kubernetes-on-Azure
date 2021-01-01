@@ -17,7 +17,7 @@ spec:
       containers:
       - name: api-dotnet
         image: api-dotnet:1.0
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
         volumeMounts:
