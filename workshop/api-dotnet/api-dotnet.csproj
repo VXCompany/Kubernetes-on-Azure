@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>api_dotnet</RootNamespace>
+    <UserSecretsId>e2dfb685-1463-40be-8414-ffafc65321e4</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.12.0-beta1" />
+  </ItemGroup>
+
+</Project>
