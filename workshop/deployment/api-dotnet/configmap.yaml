@@ -10,6 +10,7 @@ data:
         "DatabaseName": "wfat",
         "CollectionName": "candidates"        
       },
+      "AllowedHosts": "*",
       "Logging": {
         "IncludeScopes": false,
         "Debug": {
