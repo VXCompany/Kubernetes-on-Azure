@@ -3,9 +3,12 @@ data:
   appsettings.json: |+
     {
       "CandidateDatabaseSettings": {
-        "CollectionName": "candidates",
-        "ConnectionString": "mongodb://wherefore-release-mongodb:27017",
-        "DatabaseName": "wfat"
+        "Server": "wherefore-release-mongodb",
+        "Port": "27017",
+        "Username": "",
+        "Password": "",
+        "DatabaseName": "wfat",
+        "CollectionName": "candidates"        
       },
       "Logging": {
         "IncludeScopes": false,
