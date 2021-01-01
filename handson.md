@@ -1,21 +1,25 @@
 > Work in progress....
 
 ### Fix voor UI deployment
+
 Mocht je het Kubernetes cluster via de UI gedeployed hebben, moeten we nog een fix toepassen op de Azure Container Registry.
 
 Kubernetes-on-Azure-agentpool moet ACR pull permissie hebben op de registry
 
 ### Verbind met het cluster
+
 ```
 az aks get-credentials --resource-group Kubernetes-on-Azure --name Kubernetes-on-Azure
 ```
 
 ### Login op de Azure Container Registry
+
 ```
 az acr login --name [naam van de container registry]
 ```
 
 ### Deployment van MongoDB
+
 ```
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo update
@@ -23,6 +27,7 @@ helm install wherefore-mongodb-release --set auth.rootPassword=[kies een wachtwo
 ```
 
 ### Seed van de database
+
 ```
 export MONGODB_ROOT_PASSWORD=$(kubectl get secret wherefore-release-mongodb -o jsonpath="{.data.mongodb-root-password}" | base64 --decode)
 
@@ -34,30 +39,36 @@ mongo admin --host "wherefore-release-mongodb" --authenticationDatabase admin -u
 Pas de seed-db.txt toe en kies bij de prompt een wachtwoord voor de database user.
 
 ### Build & push ons API image
+
 Spring Boot (workshop/api-springboot)
+
 ```
 docker build . -t [naam van de container registry].azurecr.io/api-springboot:1.0
 docker push [naam van de container registry].azurecr.io/api-springboot:1.0
 ```
 
 .NET (workshop/api-dotnet)
+
 ```
 docker build . -t [naam van de container registry].azurecr.io/api-dotnet:1.0
 docker push [naam van de container registry].azurecr.io/api-dotnet:1.0
 ```
 
 ### ConfigMap
+
 ```
 kubectl apply -f configmap.yaml
 ```
 
 ### MongoDB credentials
+
 ```
 kubectl create secret generic mongodb-creds --from-literal=username=wfat --fro
 m-literal=password=[gekozen password in de Seed stap]
 ```
 
 ### Deployment van Ingress
+
 ```
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm repo update
@@ -71,6 +82,20 @@ kubectl apply -f ingress-rules.yaml
 ```
 
 ### Deployment van API
+
+Pas de deployment file aan met de naam van de image repository, bijvoorbeeld:
+
+```
+...
+    spec:
+      containers:
+      - name: api-dotnet
+        image: k8sonazureyb.azurecr.io/api-dotnet:1.0
+...
+```
+
+Daarna kun je zowel de deployment als de service toepassen:
+
 ```
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
