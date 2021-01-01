@@ -22,7 +22,6 @@ public class CandidateController {
     @GetMapping(value = "candidates", produces = "application/json")
     public ResponseEntity< List<Candidate>> getAllCandidates() {
         return ResponseEntity.ok()
-                .header("X-Powered-By", "api-springboot")
                 .body(candidateService.getAllCandidates());
     }
 
@@ -30,7 +29,6 @@ public class CandidateController {
     public ResponseEntity<Candidate> getNextMatch() {
 
         return ResponseEntity.ok()
-                .header("X-Powered-By", "api-springboot")
                 .body(candidateService.getNextMatch());
     }
 }

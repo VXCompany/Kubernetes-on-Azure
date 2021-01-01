@@ -2,7 +2,6 @@
 {
     public class CandidateDatabaseSettings : ICandidateDatabaseSettings
     {
-
         public string Server { get; set; }
         public int Port { get; set; }
         public string DatabaseName { get; set; }

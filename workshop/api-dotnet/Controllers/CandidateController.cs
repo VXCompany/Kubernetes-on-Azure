@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace api_dotnet.Controllers
 {
-    [Route("candidates")]
+    [Route("")]
     [ApiController]
     public class CandidateController : ControllerBase
     {
@@ -17,9 +17,17 @@ namespace api_dotnet.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Candidate>> Get() =>
-            _candidateService.Get();
+        [Route("candidates")]
+        public ActionResult<List<Candidate>> Get()
+        {
+            return _candidateService.Get();
+        }
 
-       
+        [HttpGet]
+        [Route("candidates/match")]
+        public ActionResult<Candidate> GetNextMatch()
+        {
+            return _candidateService.GetNextmatch();
+        }
     }
 }
