@@ -4,6 +4,8 @@
 
 ### Deployment van MongoDB
 
+Voor de deployment van de MongoDB database gebruiken we een Helm Chart. Deze zorgt er voor, dat er ook automatisch een secret wordt aangemaakt met het juiste "root" wachtwoord. Kies hier zelf een wachtwoord voor:
+
 ```
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo update
@@ -12,7 +14,9 @@ helm install wherefore-mongodb-release --set auth.rootPassword=[kies een wachtwo
 
 ### Seed van de database
 
-Onze database heet "wfat" (WhereFore Art Thou) en krijgt wat demo data en een database user voor de connectie vanuit de API. Deze eerste stappen zorgen voor een Mongo client container die via de MongoDB Shell ingelogd is als "root":
+Onze database heet "wfat" (WhereFore Art Thou) en krijgt wat demo data en een database user voor de connectie vanuit de API. Deze eerste stappen zorgen voor een Mongo client container die via de MongoDB Shell ingelogd is als "root".
+
+> Leuk om te weten: het wachtwoord voor deze "root" user wordt door het eerste export commando uit het secret gehaald. Als je hier goed naar kijkt, zie je dat deze base64 gedecodeerd wordt en dat kun je dus zelf ook met andere Kubernetes secrets doen.
 
 ```
 export MONGODB_ROOT_PASSWORD=$(kubectl get secret wherefore-release-mongodb -o jsonpath="{.data.mongodb-root-password}" | base64 --decode)
@@ -26,7 +30,7 @@ Hierna kun je de inhoud van de seed-db.txt (workshop/deployment/seed-db.txt) in 
 
 ### Secret (MongoDB credentials)
 
-De API maakt gebruik van een secret om in te kunnen loggen op de database (het secret is namelijk in de API container als environment variable beschikbaar). In dit secret zit ook het wachtwoord wat je in de Seed stap hebt gekozen.
+De API maakt gebruik van een secret om in te kunnen loggen op de database (het secret is namelijk in de API container als environment variable beschikbaar). In dit secret zit ook het wachtwoord wat je in de Seed stap hebt gekozen en deze maken we nu zelf met de hand aan:
 
 ```
 kubectl create secret generic mongodb-creds --from-literal=username=wfat --fro
