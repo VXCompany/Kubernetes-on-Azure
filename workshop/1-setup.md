@@ -34,4 +34,6 @@ git clone https://github.com/VXCompany/Kubernetes-on-Azure.git
 
 De bestanden die we in de workshop gebruiken, vind je in de "workshop" directory.
 
+[Naar stap 2-database](/workshop/2-database.md)
+
 [Terug naar het Workshop Script](/handson.md)

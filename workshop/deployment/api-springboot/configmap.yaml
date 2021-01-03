@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
   application.properties: |
-    spring.data.mongodb.host=wherefore-release-mongodb
+    spring.data.mongodb.host=wherefore-mongodb-release
     spring.data.mongodb.port=27017
     spring.data.mongodb.database=wfat
     spring.data.mongodb.username=${MONGODB_USERNAME}

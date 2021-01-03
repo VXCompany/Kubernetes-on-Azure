@@ -4,7 +4,7 @@
 
 ### Deployment van de Angular App
 
-Je huidige directory moet zijn "workshop/deployment/angular-app". Pas eerst de DNS naam van de endPointApiUrl aan in de configmap:
+Je huidige directory moet zijn "workshop/deployment/angular-app". Pas eerst de DNS naam van de endPointApiUrl aan in de configmap. Dit is het DNS label, dat je in stap 4 gekozen hebt (en eindigt op ".westeurope.cloudapp.azure.com/api" )
 
 ```
 ...
@@ -35,7 +35,14 @@ Daarna kun je de bestanden toepassen:
 kubectl apply -f configmap.yaml
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
+```
+
+Na dit commande wordt de deployment toegepast. We moeten wachten tot deze compleet is afgerond voor we naar de volgende stap kunnen. Met het volgende commando kun je controleren of de app gereed is (status moet "Running" zijn):
 
 ```
+kubectl get pods
+```
+
+[Naar stap 7-finished](/workshop/7-finished.md)
 
 [Terug naar het Workshop Script](/handson.md)

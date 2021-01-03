@@ -23,8 +23,13 @@ docker push [naam van je container registry].azurecr.io/api-dotnet:1.0
 Daarna kun je het Angular image builden en pushen (je huidige directory moet zijn "workshop/angular-app"):
 
 ```
-docker build . -t [naam van je container registry].azurecr.io/api-dotnet:1.0
+docker build . -t [naam van je container registry].azurecr.io/angular-app:1.0
 docker push [naam van je container registry].azurecr.io/angular-app:1.0
 ```
+
+Optioneel: je kunt via de Azure Portal in je Container Registry kijken en daar zie je dan de repositories / images staan.
+![](/images/repo.png)
+
+[Naar stap 4-ingress](/workshop/4-ingress.md)
 
 [Terug naar het Workshop Script](/handson.md)

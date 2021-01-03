@@ -36,4 +36,12 @@ kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 ```
 
+Na dit commande wordt de deployment toegepast. We moeten wachten tot deze compleet is afgerond voor we naar de volgende stap kunnen. Met het volgende commando kun je controleren of de API gereed is (status moet "Running" zijn):
+
+```
+kubectl get pods
+```
+
+[Naar stap 6-app](/workshop/6-app.md)
+
 [Terug naar het Workshop Script](/handson.md)
