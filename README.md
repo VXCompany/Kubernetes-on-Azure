@@ -14,6 +14,10 @@ De demo app bestaat uit een Angular 11 Front End, een .NET of Spring Boot Back E
 
 ![](images/screenshot1.png)
 
+### Architectuur
+
 ![](images/architecture1.png)
+
+### Componenten
 
 ![](images/components1.png)
