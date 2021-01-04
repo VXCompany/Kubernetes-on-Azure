@@ -6,7 +6,7 @@
 
 Kies 1 van de 2 API varianten en pas de deployment file aan met de naam van de image repository, bijvoorbeeld:
 
-Spring Boot (je huidige directory moet zijn "workshop/deployment/api-springboot")
+Spring Boot (je huidige directory moet zijn "workshop/api-springboot")
 
 ```
 ...
@@ -17,7 +17,7 @@ Spring Boot (je huidige directory moet zijn "workshop/deployment/api-springboot"
 ...
 ```
 
-.NET (je huidige directory moet zijn "workshop/deployment/api-dotnet")
+.NET (je huidige directory moet zijn "workshop/api-dotnet")
 
 ```
 ...

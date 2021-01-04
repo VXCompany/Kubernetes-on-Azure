@@ -10,11 +10,13 @@ Je kunt de workshop als demo gewoon mee kijken, maar leuker is het natuurlijk al
 
 ## Demo app
 
-De demo app bestaat uit een Angular 11 Front End, een .NET of Spring Boot Back End en een MongoDB database.
+De demo app bestaat uit een Angular 11 Front End, een .NET of Spring Boot API en een MongoDB database.
 
 ![](images/screenshot1.png)
 
 ### Architectuur
+
+In de workshop kan er gekozen worden voor een Spring Boot API of een .NET API (in deze afbeelding zijn ze beide opgenomen). De werking van beide API's is functioneel gelijk.
 
 ![](images/architecture1.png)
 

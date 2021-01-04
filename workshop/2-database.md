@@ -32,7 +32,7 @@ kubectl run wherefore-mongodb-release-client --rm --tty -i --restart='Never' --e
 mongo admin --host "wherefore-mongodb-release" --authenticationDatabase admin -u root -p $MONGODB_ROOT_PASSWORD
 ```
 
-Hierna kun je de inhoud van de seed-db.txt (workshop/deployment/seed-db.txt) in de Mongo Shell copy-pasten. Je krijgt dan de vraag om een wachtwoord te kiezen voor de database user en dit wachtwoord heb je in de stap hierna nog een keer nodig.
+Hierna kun je de inhoud van de seed-db.txt (workshop/mongodb/seed-db.txt) in de Mongo Shell copy-pasten. Je krijgt dan de vraag om een wachtwoord te kiezen voor de database user en dit wachtwoord heb je in de stap hierna nog een keer nodig.
 
 Type "exit" om de Mongo Shell te verlaten en nogmaals "exit" om de pod te verlaten (dit verwijdert de pod ook gelijk).
 

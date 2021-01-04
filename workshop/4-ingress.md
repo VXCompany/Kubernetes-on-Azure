@@ -22,7 +22,7 @@ In de lijst met resources staat ook een Public IP address met een naam die begin
 
 ![](/images/dnslabel.png)
 
-Pas daarna dit label ook toe in de ingress-rules.yaml file (workshop/deployment/ingress/ingress-rules.yaml):
+Pas daarna dit label ook toe in de ingress-rules.yaml file (workshop/ingress/ingress-rules.yaml):
 
 ```
 ...
