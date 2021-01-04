@@ -4,6 +4,8 @@
 
 ### Deployment van de Angular App
 
+![](/images/components-app.png)
+
 Je huidige directory moet zijn "workshop/angular-app". Pas eerst de DNS naam van de endPointApiUrl aan in de configmap. Dit is het DNS label, dat je in stap 4 gekozen hebt (en eindigt op ".westeurope.cloudapp.azure.com/api" )
 
 ```

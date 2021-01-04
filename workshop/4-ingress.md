@@ -4,6 +4,8 @@
 
 ### Deployment van Ingress
 
+![](/images/components-ingress.png)
+
 De Ingress zorgt voor de routering van het webverkeer en kan gedeployed worden via een Helm Chart:
 
 ```

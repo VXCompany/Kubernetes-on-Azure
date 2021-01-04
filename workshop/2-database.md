@@ -4,6 +4,8 @@
 
 ### Deployment van MongoDB
 
+![](/images/components-mongodb.png)
+
 Voor de deployment van de MongoDB database gebruiken we een Helm Chart. Deze zorgt er voor, dat er ook automatisch een secret wordt aangemaakt met het juiste "root" wachtwoord. Kies hier zelf een wachtwoord voor:
 
 ```
