@@ -22,16 +22,12 @@ kubectl get pods
 
 ### Seed van de database
 
-Onze database heet "wfat" (WhereFore Art Thou) en krijgt wat demo data en een database user voor de connectie vanuit de API. Deze eerste stappen zorgen voor een Mongo client container die via de MongoDB Shell ingelogd is als "root".
-
-> Leuk om te weten: het wachtwoord voor deze "root" user wordt door het eerste export commando uit het secret gehaald. Als je hier goed naar kijkt, zie je dat deze base64 gedecodeerd wordt en dat kun je dus zelf ook met andere Kubernetes secrets doen.
+Onze database heet "wfat" (WhereFore Art Thou) en krijgt wat demo data en een database user voor de connectie vanuit de API. De eerste stap zorgt voor een Mongo client container waar we vervolgens via de MongoDB Shell inloggen als "root".
 
 ```
-export MONGODB_ROOT_PASSWORD=$(kubectl get secret wherefore-mongodb-release -o jsonpath="{.data.mongodb-root-password}" | base64 --decode)
+kubectl run wherefore-mongodb-release-client --rm --tty -i --restart='Never' --image docker.io/bitnami/mongodb:4.4.3-debian-10-r0 --command -- bash
 
-kubectl run wherefore-mongodb-release-client --rm --tty -i --restart='Never' --env="MONGODB_ROOT_PASSWORD=$MONGODB_ROOT_PASSWORD" --image docker.io/bitnami/mongodb:4.4.3-debian-10-r0 --command -- bash
-
-mongo admin --host "wherefore-mongodb-release" --authenticationDatabase admin -u root -p $MONGODB_ROOT_PASSWORD
+mongo admin --host "wherefore-mongodb-release" --authenticationDatabase admin -u root -p [het gekozen root wachtwoord]
 ```
 
 Hierna kun je de inhoud van de seed-db.txt (workshop/mongodb/seed-db.txt) in de Mongo Shell copy-pasten. Je krijgt dan de vraag om een wachtwoord te kiezen voor de database user en dit wachtwoord heb je in de stap hierna nog een keer nodig.
