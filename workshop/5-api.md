@@ -15,7 +15,7 @@ Spring Boot (je huidige directory moet zijn "workshop/api-springboot")
     spec:
       containers:
       - name: api-springboot
-        image: k8sonazure12345.azurecr.io/api-springboot:1.0
+        image: [naam van je container registry].azurecr.io/api-springboot:1.0
 ...
 ```
 
@@ -26,7 +26,7 @@ Spring Boot (je huidige directory moet zijn "workshop/api-springboot")
     spec:
       containers:
       - name: api-dotnet
-        image: k8sonazure12345.azurecr.io/api-dotnet:1.0
+        image: [naam van je container registry].azurecr.io/api-dotnet:1.0
 ...
 ```
 
@@ -38,7 +38,7 @@ kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 ```
 
-Na dit commande wordt de deployment toegepast. We moeten wachten tot deze compleet is afgerond voor we naar de volgende stap kunnen. Met het volgende commando kun je controleren of de API gereed is (status moet "Running" zijn):
+Na dit commando wordt de deployment toegepast. We moeten wachten tot deze compleet is afgerond voor we naar de volgende stap kunnen. Met het volgende commando kun je controleren of de API gereed is (status moet "Running" zijn):
 
 ```
 kubectl get pods

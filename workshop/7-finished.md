@@ -33,10 +33,16 @@ Kijk eventueel in de video, daar komt het ook in voor: [Pauzeren van het cluster
 
 Niet vergeten om de scaleset weer te starten als je het cluster gaat gebruiken!
 
-[Terug naar het Workshop Script](/handson.md)
-
 ## Verwijderen van het cluster
 
 Als je het cluster helemaal wilt verwijderen (inclusief de Container Registry), dan is het het makkelijkst om via de Azure Portal de complete Resource Group te verwijderen.
 
-TODO: Screenshot van het verwijderen van een Resource Group toevoegen
+![](/images/deleterg.png)
+
+Lokaal kun je nu ook de Kubectl context weggooien:
+
+```
+kubectl config delete-context Azure-on-Kubernetes
+```
+
+[Terug naar het Workshop Script](/handson.md)

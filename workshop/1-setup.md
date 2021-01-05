@@ -2,12 +2,6 @@
 
 [Terug naar het Workshop Script](/handson.md)
 
-### Fix voor UI deployment
-
-Mocht je het Kubernetes cluster via de UI gedeployed hebben, dan moet je nog een fix toepassen op de Azure Container Registry.
-
-TODO: Kubernetes-on-Azure-agentpool moet ACR pull permissie hebben op de registry
-
 ### Verbind met het cluster
 
 Om je lokale Kubernetes client (kubectl) te laten werken met het Azure Kubernetes cluster, gebruik je het volgende commando (uit de Azure CLI):
