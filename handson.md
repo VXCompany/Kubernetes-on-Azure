@@ -6,3 +6,4 @@
 - [4-ingress](workshop/4-ingress.md)
 - [5-api](workshop/5-api.md)
 - [6-app](workshop/6-app.md)
+- [7-finished](workshop/7-finished.md)
