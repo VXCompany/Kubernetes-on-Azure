@@ -59,6 +59,7 @@ az group create --name Kubernetes-on-Azure --location westeurope
 
 ```
 #geen spaties of streepjes, tussen 5-50 karakters
+#let op, gebruik een naam in lowercase
 MYACR=[naam van de container registry] #bash
 $MYACR='[naam van de container registry]' #PowerShell
 

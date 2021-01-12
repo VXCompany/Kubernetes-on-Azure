@@ -13,6 +13,7 @@ az aks get-credentials --resource-group Kubernetes-on-Azure --name Kubernetes-on
 Daarna moet je nog inloggen op de Azure Container Registry, dan is ook je lokale Docker client juist geconfigureerd:
 
 ```
+#let op, gebruik een naam in lowercase
 az acr login --name [naam van je container registry]
 ```
 
