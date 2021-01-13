@@ -8,42 +8,46 @@ We beginnen met een aantal software requirements:
 
 - Git
 - Docker Desktop (of zorg zelf voor een alternatief voor de Docker Engine en CLI)
-- Inschakelen van Kubernetes lokaal (of zorg zelf voor een alternatief, bijvoorbeeld m.b.v. minikube)
+- Inschakelen van Kubernetes lokaal (of zorg zelf voor een alternatief, bijvoorbeeld m.b.v. Minikube)
 - Azure CLI
 - Helm (v3) CLI
 - Optioneel: Visual Studio Code (of een alternatieve tekst editor)
 - Optioneel: Visual Studio Code plugins
-- Optioneel: WSL2 op Windows (optioneel)
+- Optioneel: WSL2 op Windows
 
-Mocht je uit dit lijstje nog wat moeten installeren, dan vind je de beschrijvingen hier: [requirements](requirements.md). Als je alle software geinstalleerd hebt, dan kun je beginnen met de voorbereidingen.
+Mocht je uit dit lijstje nog wat moeten installeren, dan vind je de beschrijvingen hier: [requirements](eisen.md). Als je alle software geinstalleerd hebt, dan kun je beginnen met de voorbereidingen.
 
 ## Een actieve Azure subscriptie met tegoed
 
-We gaan een deployment doen van een Kubernetes cluster op Azure en om dit te kunnen doen, maken we gebruik van onze Microsoft Partner Network licenties. Deze licentie moet je als VX medewerker zelf activeren, waarna je een maandelijks Azure tegoed van 120 Euro kunt "claimen". Dit tegoed is ruim voldoende voor de workshop en hier kun je daarna ook gewoon gebruik van blijven maken.
+We gaan een deployment doen van een Kubernetes cluster op Azure en om dit te kunnen doen, maken we gebruik van onze Microsoft Partner Network licenties. Deze licentie moet je als medewerker zelf activeren, waarna je een maandelijks Azure tegoed van 120 Euro kunt "claimen". Dit tegoed is ruim voldoende voor de workshop en hier kun je daarna ook gewoon gebruik van blijven maken.
 ![](images/benefits.png)
 
-1. Navigeer naar https://my.visualstudio.com en log in met je eigen @vxcompany.com account.
+1. Navigeer naar https://my.visualstudio.com en log in met je eigen account.
 2. Op de landingspagina vind je als het goed is een card met de 120,- euro (of $150,-) Azure tegoed. Klik op de button "Activate" om dit te activeren.
 3. Volg de stappen voor het aanmaken van een persoonlijke Azure subscription.
 4. Uiteindelijk opent de Azure Portal en heb je een eigen Azure omgeving.
 
 > Meer informatie vind je in de Microsoft documentatie: https://docs.microsoft.com/en-us/visualstudio/subscriptions/vs-azure
 
+Als alternatief kun je gebruik maken van een [Azure Trial](https://azure.microsoft.com/en-us/free/search/)
+
 ## Een Kubernetes cluster op Azure Kubernetes Services
 
-Je kunt een Kubernetes cluster aanmaken via de UI of via de Azure CLI. In deze handleiding gebruiken we de CLI. Mocht je het via de UI willen doen, dan kun je deze video op Stream bekijken [Kubernetes-on-Azure](https://web.microsoftstream.com/video/7dd8991f-300c-4010-b0c7-9bc3234d78ff).
+Je kunt een Kubernetes cluster aanmaken via de UI of via de Azure CLI. In deze handleiding gebruiken we de CLI.
 
 > Om de volgende stappen te volgen heb je de Azure CLI nodig. Zie https://docs.microsoft.com/en-us/cli/azure/install-azure-cli voor meer informatie.
 
 1. Login op Azure
-   Gebruik de Azure CLI om in te loggen en gebruik het account (je @vxcompany.com account), dat aan de MPN licentie/subscriptie hangt. Als het is gelukt, retourneert de dit commando 1 of meerdere subscripties.
+
+Gebruik de Azure CLI om in te loggen en gebruik het account (je eigen bedrijfsaccount), dat aan de MPN licentie/subscriptie hangt of het account dat je gebruikt heb voor de Trial activatie. Als het is gelukt, retourneert de dit commando 1 of meerdere subscripties.
 
 ```
 az login
 ```
 
 2. Selecteer de juiste subscription
-   Als er meerdere subscripties zijn (bijvoorbeeld van een klant of de VX Factory), dan moet je vaak nog even de juiste selecteren. Je kunt de juiste id (GUID) vinden in de output van het login commando uit stap 1.
+
+Als er meerdere subscripties zijn, dan moet je vaak nog even de juiste selecteren. Je kunt de juiste id (GUID) vinden in de output van het login commando uit stap 1.
 
 ```
 az account set -s [id van de juiste subscriptie]
@@ -55,11 +59,9 @@ az account set -s [id van de juiste subscriptie]
 az group create --name Kubernetes-on-Azure --location westeurope
 ```
 
-4. Maak een Azure Container Registry aan. De naam moet globaal uniek zijn, geen spaties of streepjes, tussen 5-50 karakters
+4. Maak een Azure Container Registry aan. De naam moet globaal uniek zijn, geen spaties of streepjes, tussen 5-50 karakters en uitsluitend kleine letters.
 
 ```
-#geen spaties of streepjes, tussen 5-50 karakters
-#let op, gebruik een naam in lowercase
 MYACR=[naam van de container registry] #bash
 $MYACR='[naam van de container registry]' #PowerShell
 
@@ -73,7 +75,8 @@ az aks create -n Kubernetes-on-Azure -g Kubernetes-on-Azure --node-count 1 --gen
 ```
 
 6. Verbind met het cluster
-   Om de "kubectl" CLI te verbinden met het Kubernetes cluster kun je het volgende commande gebruiken. Dit commando download de benodigde credentials en configureert de CLI.
+
+Om de "kubectl" CLI te verbinden met het Kubernetes cluster kun je het volgende commande gebruiken.
 
 ```
 az aks get-credentials --resource-group Kubernetes-on-Azure --name Kubernetes-on-Azure
@@ -83,7 +86,7 @@ az aks get-credentials --resource-group Kubernetes-on-Azure --name Kubernetes-on
 
 1. Login op Azure
 
-Gebruik de Azure CLI om in te loggen en gebruik het account (je @vxcompany.com account), dat aan de MPN licentie/subscriptie hangt. Als het is gelukt, retourneert de dit commando 1 of meerdere subscripties.
+Gebruik de Azure CLI om in te loggen en gebruik het account (je eigen bedrijfsaccount), dat aan de MPN licentie/subscriptie hangt of het account dat je gebruikt heb voor de Trial activatie. Als het is gelukt, retourneert de dit commando 1 of meerdere subscripties.
 
 ```
 az login
@@ -91,7 +94,7 @@ az login
 
 2. Selecteer de juiste subscription
 
-Als er meerdere subscripties zijn (bijvoorbeeld van een klant of de VX Factory), dan moet je vaak nog even de juiste selecteren. Je kunt de juiste id (GUID) vinden in de output van het login commando uit stap 1.
+Als er meerdere subscripties zijn, dan moet je vaak nog even de juiste selecteren. Je kunt de juiste id (GUID) vinden in de output van het login commando uit stap 1.
 
 ```
 az account set -s [id van de juiste subscriptie]
@@ -153,7 +156,5 @@ Als je dan klikt op de Virtual Machine Scale Set, dan heb je bovenin de mogelijk
 ![](images/pause.png)
 
 Het cluster blijft bestaan (sterker nog de Master Node draait gewoon door), maar er gaat geen bedrag meer van het maandelijkse tegoed af.
-
-Kijk eventueel in de video, daar komt het ook in voor: [Pauzeren van het cluster](https://web.microsoftstream.com/video/7dd8991f-300c-4010-b0c7-9bc3234d78ff?st=291)
 
 Niet vergeten om de scaleset weer te starten als je het cluster gaat gebruiken!

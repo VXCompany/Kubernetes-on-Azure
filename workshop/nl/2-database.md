@@ -14,7 +14,7 @@ helm repo update
 helm install wherefore-mongodb-release bitnami/mongodb --set auth.rootPassword=[kies een wachtwoord]
 ```
 
-Na dit commande wordt de Helm Chart toegepast. We moeten wachten tot deze compleet is afgerond voor we naar de volgende stap kunnen. Met het volgende commando kun je controleren of de MongoDB gereed is (status moet "Running" zijn):
+Na dit commando wordt de Helm Chart toegepast. We moeten wachten tot deze compleet is afgerond voor we naar de volgende stap kunnen. Met het volgende commando kun je controleren of de MongoDB gereed is (status moet "Running" zijn):
 
 ```
 kubectl get pods
