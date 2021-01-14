@@ -28,7 +28,7 @@ During the workshop you will provision several Kubernetes components and gain wo
 
 ### Images
 
-During the workshop we will build our own containers for the Angular app and the Spring Boot or .NET API.
+During the workshop we will build our own images for the Angular app and the Spring Boot or .NET API.
 
 ![](images/images.png)
 
