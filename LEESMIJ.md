@@ -28,6 +28,8 @@ Tijdens de workshop zul je verschillende Kubernetes componenten uitrollen en zo 
 
 ### Images
 
+Tijdens de workshop zullen we de images voor de Angular app en de Spring Boot of .NET API zelf bouwen.
+
 ![](images/images.png)
 
 ## Workshop introductie
