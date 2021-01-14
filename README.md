@@ -6,7 +6,7 @@ Training material for the Kubernetes on Azure workshop. This content is also ava
 
 ## Preparation workshop
 
-To be able to complete the workshop some preparations are needed. Just follow this [preparation guide](workshop/en/preparation.md)
+To be able to complete the workshop some preparations are needed. Just follow this [preparation guide](workshop/en/preparation.md). Attendees should do this before the workshop starts.
 
 ## Demo app
 
@@ -34,7 +34,7 @@ During the workshop we will build our own images for the Angular app and the Spr
 
 ## The Workshop introduction
 
-To assist with the introduction of the workshop a 10-minute introduction Microsoft PowerPoint slidedeck is included.
+To assist with the introduction of the workshop a short Microsoft PowerPoint slidedeck is included.
 
 ## The Workshop Script
 
