@@ -44,6 +44,6 @@ Na dit commando wordt de deployment toegepast. We moeten wachten tot deze comple
 kubectl get pods
 ```
 
-[Naar stap 6-app](/6-app.md)
+[Naar stap 6-app](6-app.md)
 
 [Terug naar het Workshop Script](handson.md)
