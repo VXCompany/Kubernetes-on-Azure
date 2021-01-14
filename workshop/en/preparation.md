@@ -124,11 +124,11 @@ kubectl get services
 
 If this command returns "<pending>", the service is not fully up yet and you have to wait a bit longer.
 
-![](images/kgs.png)
+![](/images/kgs.png)
 
 If you then navigate to: http://[external-ip]:8080 the test server should respond.
 
-![](images/echo.png)
+![](/images/echo.png)
 
 5. Cleanup testpod and service
 
@@ -145,7 +145,7 @@ To do this, you will have to navigate to the special resource group starting wit
 
 If you then navigate to the Virtual Machine Scale Set, you will see the option to pause the set in the top menu (also known as de-allocate).
 
-![](images/pause.png)
+![](/images/pause.png)
 
 Your cluster remains operational (the Master Node keeps running), but most of the costs will stop.
 

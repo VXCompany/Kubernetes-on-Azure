@@ -1,6 +1,6 @@
 # 3-buildpush
 
-[Back to the Workshop Script](/handson.md)
+[Back to the Workshop Script](handson.md)
 
 ### Build & push the images
 
@@ -30,6 +30,6 @@ docker push [naam van je container registry].azurecr.io/angular-app:1.0
 Optional: you can check the Azure Portal and take a look at the Container Registry that shows the repositories and images.
 ![](/images/repo.png)
 
-[Next step 4-ingress](/workshop/4-ingress.md)
+[Next step 4-ingress](4-ingress.md)
 
-[Back to the Workshop Script](/handson.md)
+[Back to the Workshop Script](handson.md)

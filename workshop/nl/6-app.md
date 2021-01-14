@@ -1,6 +1,6 @@
 # 6-app
 
-[Terug naar het Workshop Script](/handson.md)
+[Terug naar het Workshop Script](handson.md)
 
 ### Deployment van de Angular App
 
@@ -45,6 +45,6 @@ Na dit commande wordt de deployment toegepast. We moeten wachten tot deze comple
 kubectl get pods
 ```
 
-[Naar stap 7-finished](/workshop/7-finished.md)
+[Naar stap 7-finished](7-finished.md)
 
-[Terug naar het Workshop Script](/handson.md)
+[Terug naar het Workshop Script](handson.md)

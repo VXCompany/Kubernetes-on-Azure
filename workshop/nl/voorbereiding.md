@@ -20,7 +20,7 @@ Mocht je uit dit lijstje nog wat moeten installeren, dan vind je de beschrijving
 ## Een actieve Azure subscriptie met tegoed
 
 We gaan een deployment doen van een Kubernetes cluster op Azure en om dit te kunnen doen, maken we gebruik van onze Microsoft Partner Network licenties. Deze licentie moet je als medewerker zelf activeren, waarna je een maandelijks Azure tegoed van 120 Euro kunt "claimen". Dit tegoed is ruim voldoende voor de workshop en hier kun je daarna ook gewoon gebruik van blijven maken.
-![](images/benefits.png)
+![](/images/benefits.png)
 
 1. Navigeer naar https://my.visualstudio.com en log in met je eigen account.
 2. Op de landingspagina vind je als het goed is een card met de 120,- euro (of $150,-) Azure tegoed. Klik op de button "Activate" om dit te activeren.
@@ -132,11 +132,11 @@ kubectl get services
 
 Mocht hier "<pending>" staan, dan moet je nog even geduld hebben.
 
-![](images/kgs.png)
+![](/images/kgs.png)
 
 Wanneer je nu met een browser navigeert naar: http://[external-ip]:8080 zou de test server moeten antwoorden.
 
-![](images/echo.png)
+![](/images/echo.png)
 
 5. Verwijder testpod en service
 
@@ -153,7 +153,7 @@ Als je gaat kijken bij de resource groups, zul je zien dat er nog een "extra" re
 
 Als je dan klikt op de Virtual Machine Scale Set, dan heb je bovenin de mogelijkheid om de scale set (en dus de onderliggende Virtual Machines) te stoppen (ook wel de-allocate genoemd).
 
-![](images/pause.png)
+![](/images/pause.png)
 
 Het cluster blijft bestaan (sterker nog de Master Node draait gewoon door), maar er gaat geen bedrag meer van het maandelijkse tegoed af.
 

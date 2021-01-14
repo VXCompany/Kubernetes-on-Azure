@@ -1,6 +1,6 @@
 # 2-database
 
-[Terug naar het Workshop Script](/handson.md)
+[Terug naar het Workshop Script](handson.md)
 
 ### Deployment van MongoDB
 
@@ -42,6 +42,6 @@ De API maakt gebruik van een secret om in te kunnen loggen op de database (het s
 kubectl create secret generic mongodb-creds --from-literal=username=wfat --from-literal=password=[gekozen password in de Seed stap]
 ```
 
-[Naar stap 3-buildpush](/workshop/3-buildpush.md)
+[Naar stap 3-buildpush](3-buildpush.md)
 
-[Terug naar het Workshop Script](/handson.md)
+[Terug naar het Workshop Script](handson.md)

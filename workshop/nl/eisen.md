@@ -6,17 +6,17 @@ Installeer Git volgens de instructies: https://git-scm.com/download
 
 Installeer Docker Desktop op je laptop, daarmee krijg je alle tools voor zowel Docker als Kubernetes. De download voor Mac of Windows vind je hier: https://www.docker.com/products/docker-desktop
 
-![Docker Desktop installatie logo](images/dockerdesktop.png)
+![Docker Desktop installatie logo](/images/dockerdesktop.png)
 
 Bij het gebruik van Docker Desktop op Windows is het gebruik van Linux containers (in plaats van Windows containers) aan te raden. Je vindt deze instelling via het Task Bar icon (in deze stand staat hij dus goed):
 
-![Docker Desktop installatie logo](images/linuxcontainers.png)
+![Docker Desktop installatie logo](/images/linuxcontainers.png)
 
 ### Inschakelen van Kubernetes
 
 Na de installatie van Docker Desktop is het inschakelen van Kubernetes slechts een kwestie van een checkbox (via de settings van Docker Desktop).
 
-![Inschakelen Kubernetes](images/kubernetes.png)
+![Inschakelen Kubernetes](/images/kubernetes.png)
 
 ### Installeren van de Azure CLI
 
@@ -56,4 +56,4 @@ https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
 Na de installatie van WSL2 kun je in Docker Desktop de integratie inschakelen (wederom via de Docker Desktop settings).
 
-![WSL2 integratie](images/wsl2dd.png)
+![WSL2 integratie](/images/wsl2dd.png)

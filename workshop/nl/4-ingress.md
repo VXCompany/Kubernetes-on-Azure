@@ -1,6 +1,6 @@
 # 4-ingress
 
-[Terug naar het Workshop Script](/handson.md)
+[Terug naar het Workshop Script](handson.md)
 
 ### Deployment van Ingress
 
@@ -40,6 +40,6 @@ Daarna kan deze toegepast worden:
 kubectl apply -f ingress-rules.yaml
 ```
 
-[Naar stap 5-api](/workshop/5-api.md)
+[Naar stap 5-api](5-api.md)
 
 [Terug naar het Workshop Script](/handson.md)

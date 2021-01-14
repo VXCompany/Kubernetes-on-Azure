@@ -1,6 +1,6 @@
 # 2-database
 
-[Back to the Workshop Script](/handson.md)
+[Back to the Workshop Script](handson.md)
 
 ### Deployment MongoDB
 
@@ -42,6 +42,6 @@ The API uses the secret to get the credentials for database access (this secret 
 kubectl create secret generic mongodb-creds --from-literal=username=wfat --from-literal=password=[the password from the Seed stap]
 ```
 
-[Next step 3-buildpush](/workshop/3-buildpush.md)
+[Next step 3-buildpush](3-buildpush.md)
 
-[Back to the Workshop Script](/handson.md)
+[Back to the Workshop Script](handson.md)

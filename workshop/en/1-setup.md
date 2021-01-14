@@ -1,6 +1,6 @@
 # 1-setup
 
-[Back to the Workshop Script](/handson.md)
+[Back to the Workshop Script](handson.md)
 
 ### Connect to the cluster
 
@@ -29,6 +29,6 @@ git clone https://github.com/VXCompany/Kubernetes-on-Azure.git
 
 The files we will need in this workshop are located within the "workshop" directory.
 
-[Next step 2-database](/workshop/2-database.md)
+[Next step 2-database](2-database.md)
 
-[Back to the Workshop Script](/handson.md)
+[Back to the Workshop Script](handson.md)

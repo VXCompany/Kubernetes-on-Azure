@@ -45,4 +45,4 @@ Lokaal kun je nu ook de Kubectl context weggooien:
 kubectl config delete-context Azure-on-Kubernetes
 ```
 
-[Terug naar het Workshop Script](/handson.md)
+[Terug naar het Workshop Script](handson.md)

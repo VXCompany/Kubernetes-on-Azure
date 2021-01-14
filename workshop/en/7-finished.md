@@ -46,4 +46,4 @@ And delete the local Kubectl context:
 kubectl config delete-context Azure-on-Kubernetes
 ```
 
-[Back to the Workshop Script](/handson.md)
+[Back to the Workshop Script](handson.md)

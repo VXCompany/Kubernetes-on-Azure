@@ -1,6 +1,6 @@
 # 6-app
 
-[Back to the Workshop Script](/handson.md)
+[Back to the Workshop Script](handson.md)
 
 ### Angular App deployment van de Angular App
 
@@ -45,6 +45,6 @@ This command deploys the pod and services. We need to wait for completion before
 kubectl get pods
 ```
 
-[Next step 7-finished](/workshop/7-finished.md)
+[Next step 7-finished](7-finished.md)
 
-[Back to the Workshop Script](/handson.md)
+[Back to the Workshop Script](handson.md)

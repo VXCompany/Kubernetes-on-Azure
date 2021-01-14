@@ -1,22 +1,22 @@
-### Installatie van Git
+### Install Git
 
 Follow the instructions here to install Git: https://git-scm.com/download
 
-### Installatie van Docker Desktop
+### Install Docker Desktop
 
 Install Docker Desktop, it provides all the tools for both Docker and Kubernetes. The download for Mac and Windows is located here: https://www.docker.com/products/docker-desktop
 
-![Docker Desktop install logo](images/dockerdesktop.png)
+![Docker Desktop install logo](/images/dockerdesktop.png)
 
 If you use Docker Desktop on Windows, we recommend the use of Linux Containers (instead of Windows containers). You can change this setting if needed with the Docker Desktop Task Bar icon (this screenshot shows the correct setting):
 
-![Docker Desktop installatie logo](images/linuxcontainers.png)
+![Docker Desktop installatie logo](/images/linuxcontainers.png)
 
 ### Enable Kubernetes
 
 After the installation of Docker Desktop you can enable Kubernetes with a simple checkbox (through the settings of Docker Desktop)
 
-![Inschakelen Kubernetes](images/kubernetes.png)
+![Inschakelen Kubernetes](/images/kubernetes.png)
 
 ### Install the Azure CLI
 
@@ -54,4 +54,4 @@ We recommend the installation of WSL2. Follow the steps here: https://docs.micro
 
 After the installation of WSL2 you can enable the Docker Desktop integration (again through the Docker Desktop settings).
 
-![WSL2 integratie](images/wsl2dd.png)
+![WSL2 integratie](/images/wsl2dd.png)

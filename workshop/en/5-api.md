@@ -1,6 +1,6 @@
 # 5-api
 
-[Back to the Workshop Script](/handson.md)
+[Back to the Workshop Script](handson.md)
 
 ### API deployment
 
@@ -44,6 +44,6 @@ This command deploys the pod and services. We need to wait for completion before
 kubectl get pods
 ```
 
-[Next step 6-app](/workshop/6-app.md)
+[Next step 6-app](6-app.md)
 
-[Back to the Workshop Script](/handson.md)
+[Back to the Workshop Script](handson.md)
